@@ -19,7 +19,7 @@ const routes: Routes = [
 	{
 		path: 'secured-role',
 		canLoad: [AuthGuard],
-		loadChildren: '../secured/secured-role.module#SecuredRoleModule',
+		loadChildren: '../app/secured/secured-role/secured-role.module#SecuredRoleModule',
 		data: {
 			Permission: {
 				Role: 'rani_app_role',
@@ -30,7 +30,7 @@ const routes: Routes = [
 	{
 		path: 'groupRestricted',
 		canLoad: [AuthGuard],
-		loadChildren: '../group-restricted/group-restricted.module#GroupRestrictedModule',
+		loadChildren: '../app/group-restricted/group-restricted.module#GroupRestrictedModule',
 		data: {
 			Permission: {
 				Only: ['User'],
