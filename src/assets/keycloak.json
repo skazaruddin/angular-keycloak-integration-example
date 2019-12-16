@@ -1,0 +1,11 @@
+
+{
+  "realm": "rani",
+  "auth-server-url": "http://127.0.0.1:8080/auth",
+  "ssl-required": "none",
+  "resource": "rani-client",
+  "credentials": {
+    "secret": "afcf07f0-ff68-40a9-9d5f-43e596cce662"
+  },
+  "confidential-port": 0
+}

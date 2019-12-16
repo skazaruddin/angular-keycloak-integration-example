@@ -1,0 +1,41 @@
+<div class="center">
+	<div *ngIf="errors">{{stringify(errors)}}</div>
+	<p>This is a public page accessible to anyone.</p>
+	<p>User edward should be able to call the api while kerri should throw forbidden error since she doesn't have APIAccess role.</p>
+	<ul>
+		<li>
+			<a [routerLink]="['/secured']">Secured page in the same module.</a></li>
+		<li>
+			<a [routerLink]="['/groupRestricted']">Secured page in another module. (group secured, kerri will fail)</a></li>
+		<li>
+			<a [routerLink]="['/secured-role']">Secured page by role.</a></li>
+		<li>
+			<a style="cursor: pointer;" (click)="callApi()">Call API (Login required)</a></li>
+		<li *ngIf="getKeycloakService().isLogged()">
+			<a (click)="getKeycloakService().logout()">Logout</a></li>
+	</ul>
+	<div *ngIf="animes">
+		<h2>Isekai Anime</h2>
+		<ul>
+			<li *ngFor="let anime of animes">{{anime}}</li>
+		</ul>
+	</div>
+</div>
+
+
+
+<!-- <h1>This is secured page.</h1>
+<h1>Enter the main heading, usually the same as the title.</h1>
+<p>Be <b>bold</b> in stating your key points. Put them in a list: </p>
+<ul>
+<li>The first item in your list</li>
+<li>The second item; <i>italicize</i> key words</li>
+</ul>
+<p>Improve your image by including an image. </p>
+<p><img src="http://www.mygifs.com/CoverImage.gif" alt="A Great HTML Resource"></p>
+<p>Add a link to your favorite <a href="https://www.dummies.com/">Web site</a>.
+Break up your page with a horizontal rule or two. </p>
+<hr>
+<p>Finally, link to <a href="page2.html">another page</a> in your own Web site.</p>
+<!-- And add a copyright notice.-->
+<p>&#169; Wiley Publishing, 2011</p> 
